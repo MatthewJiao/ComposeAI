@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
 import IsometricGrid, { Cell } from 'react-isometric-grid';
 import dynamics from 'dynamics.js';
 import bg from "../assets/bg3.jpg";
@@ -8,9 +9,12 @@ import bach from "../assets/bach.png";
 import kpop from "../assets/kpop.jpg";
 import anime from "../assets/anime.jpg";
 import pop from "../assets/pop.jpg";
+
 import rock from "../assets/rock.jpg";
 import gaming from "../assets/gaming.jpg";
 import hiphop from "../assets/hiphop.jpg";
+import RangeSlider from './durationSlider'
+import OffsetSlider from './offsetSlider'
 
 class GridTheme extends Component {
   render() {
@@ -101,8 +105,9 @@ class GridTheme extends Component {
           title = "rock n roll"
           style = {{ width: '200px', height: '200px', transformStyle: 'preserve-3d', color: "#eb4034" }}
           layerStyle = {styleX}
-          onClick = {() => selected("rock")}
+          onClick = {() => selected("rocknroll")}
         />
+        
         <Cell
           layers={[
             `${hiphop}`,
@@ -127,6 +132,7 @@ class GridTheme extends Component {
           layerStyle = {styleX}
           onClick = {() => selected("pop")}
         />
+        
         <Cell
           layers={[
             `${kpop}`,
@@ -163,9 +169,68 @@ class GridTheme extends Component {
           layerStyle = {styleX}
           onClick = {() => selected("gaming")}
         />
+        <br/>
+        <br/>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <Wrapper1>
+            <RangeSlider/>
+        </Wrapper1>
+        <Wrapper2>
+            <RangeSlider/>
+        </Wrapper2>
       </IsometricGrid>
+      
     );
   }
 }
 
 export default GridTheme;
+
+const Wrapper1 = styled.div`
+position: absolute;
+left: 5%;
+
+`;
+const Wrapper2 = styled.div`
+position: absolute;
+left: 55%;
+
+`;

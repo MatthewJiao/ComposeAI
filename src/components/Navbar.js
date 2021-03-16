@@ -78,8 +78,10 @@ const Navbar = (props) => {
 
 
   const getNotes = () => {
-    
-    axios.get(`http://127.0.0.1:5000/predict/data`)
+    if (params.selectTheme == 'n/a') {
+      alert('no theme selected')
+    } else {
+    axios.get(`http://127.0.0.1:5000/predict/${params.selectTheme}`)
       .then(res => {
         const notes = res.data;
         handleNotes(notes)
@@ -89,6 +91,7 @@ const Navbar = (props) => {
       })
       
       console.log("wummmorking");
+    }
 
   }
 

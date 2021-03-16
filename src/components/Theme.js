@@ -6,6 +6,7 @@ import HeroText from "./HeroText";
 import GridTheme from "./GridTheme";
 
 import Tilt from "react-tilt";
+import RangeSlider from './durationSlider'
 
 const Theme = (props) => {
   const {handleChange, maintain, params} = props;
@@ -15,7 +16,6 @@ const Theme = (props) => {
       <Wrapper>
         <InnerWrapper>
           <GridTheme params = {params}/>
-          
         </InnerWrapper>
       </Wrapper>
     </Container>
