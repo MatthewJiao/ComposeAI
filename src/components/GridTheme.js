@@ -13,7 +13,7 @@ import pop from "../assets/pop.jpg";
 import rock from "../assets/rock.jpg";
 import gaming from "../assets/gaming.jpg";
 import hiphop from "../assets/hiphop.jpg";
-import RangeSlider from './durationSlider'
+import DurationSlider from './durationSlider'
 import OffsetSlider from './offsetSlider'
 
 class GridTheme extends Component {
@@ -211,10 +211,10 @@ class GridTheme extends Component {
         <br/>
         <br/>
         <Wrapper1>
-            <RangeSlider/>
+            <DurationSlider/>
         </Wrapper1>
         <Wrapper2>
-            <RangeSlider/>
+            <OffsetSlider/>
         </Wrapper2>
       </IsometricGrid>
       
@@ -231,6 +231,6 @@ left: 5%;
 `;
 const Wrapper2 = styled.div`
 position: absolute;
-left: 55%;
+left: 68%;
 
 `;

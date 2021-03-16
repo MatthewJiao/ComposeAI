@@ -5,7 +5,9 @@ import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles({
   root: {
-    width: 300,
+    color: "#ffffff",
+    fontVariant: "small-caps",
+    width: 400,
   },
 });
 
@@ -24,7 +26,7 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        Temperature range
+        Composed Score Duration
       </Typography>
       <Slider
         value={value}

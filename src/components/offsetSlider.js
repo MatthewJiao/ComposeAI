@@ -5,7 +5,9 @@ import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles({
   root: {
-    height: 300,
+    color: "#ffffff",
+    fontVariant: "small-caps",
+    width: 200,
   },
 });
 
@@ -13,55 +15,27 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-const marks = [
-  {
-    value: 0,
-    label: '0°C',
-  },
-  {
-    value: 20,
-    label: '20°C',
-  },
-  {
-    value: 37,
-    label: '37°C',
-  },
-  {
-    value: 100,
-    label: '100°C',
-  },
-];
-
-export default function VerticalSlider() {
+export default function RangeSlider() {
   const classes = useStyles();
+  const [value, setValue] = React.useState([20, 37]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
-    <React.Fragment>
-      <Typography id="vertical-slider" gutterBottom>
-        Temperature
+    <div className={classes.root}>
+      <Typography id="range-slider" gutterBottom>
+        Note Offset (seconds)
       </Typography>
-      <div className={classes.root}>
-        <Slider
-          orientation="vertical"
-          getAriaValueText={valuetext}
-          defaultValue={30}
-          aria-labelledby="vertical-slider"
-        />
-        <Slider
-          disabled
-          orientation="vertical"
-          getAriaValueText={valuetext}
-          defaultValue={30}
-          aria-labelledby="vertical-slider"
-        />
-        <Slider
-          orientation="vertical"
-          defaultValue={[20, 37]}
-          aria-labelledby="vertical-slider"
-          getAriaValueText={valuetext}
-          marks={marks}
-        />
-      </div>
-    </React.Fragment>
+      <Slider
+        value={value}
+        onChange={handleChange}
+        valueLabelDisplay="auto"
+        aria-labelledby="range-slider"
+        getAriaValueText={valuetext}
+      />
+      
+    </div>
   );
 }
