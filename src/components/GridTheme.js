@@ -17,6 +17,11 @@ import DurationSlider from './durationSlider'
 import OffsetSlider from './offsetSlider'
 
 class GridTheme extends Component {
+
+  shouldComponentUpdate(nextProps, nextState){
+    return false; // equals() is your implementation
+ }
+ 
   render() {
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -211,10 +216,10 @@ class GridTheme extends Component {
         <br/>
         <br/>
         <Wrapper1>
-            <DurationSlider/>
+            <DurationSlider params = {params}/>
         </Wrapper1>
         <Wrapper2>
-            <OffsetSlider/>
+            <OffsetSlider params = {params}/>
         </Wrapper2>
       </IsometricGrid>
       

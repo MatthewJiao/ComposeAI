@@ -15,8 +15,8 @@ const App = () => {
   const [duration, setDuration] = useState(false);
   const [offset, setOffset] = useState(false);
   const [selectTheme, setSelectTheme] = useState('n/a');
-  const [selectDuration, setSelectDuration] = useState('n/a');
-  const [selectOffset, setSelectOffset] = useState('n/a');
+  const [selectDuration, setSelectDuration] = useState([0,100]);
+  const [selectOffset, setSelectOffset] = useState([0,100]);
   const [currentNotes, setCurrentNotes] = useState('empty');
   const [playAble, setPlayAble] = useState(false);
 

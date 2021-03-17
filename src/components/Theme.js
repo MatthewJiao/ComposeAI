@@ -8,7 +8,7 @@ import GridTheme from "./GridTheme";
 import Tilt from "react-tilt";
 import RangeSlider from './durationSlider'
 
-const Theme = (props) => {
+const Theme = React.memo((props) => {
   const {handleChange, maintain, params} = props;
   handleChange(maintain);
   return (
@@ -20,7 +20,7 @@ const Theme = (props) => {
       </Wrapper>
     </Container>
   );
-};
+});
 
 const Left = styled.div`
   width: 50%;
