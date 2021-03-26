@@ -8,7 +8,8 @@ import {note, chord, instrument, midi_stream, stream, fp} from "music21j/release
 import MidiWriter from 'midi-writer-js'
 import fs from 'fs'
 import * as Tone from 'tone'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = (props) => {
   }
 
   const playMusic = (prediction_output) => {
-    
+    console.log(prediction_output)
     var processed_output = []
     for (var i = 0; i < prediction_output.length; ++i) {
       if (prediction_output[i].includes('.')) {
@@ -137,7 +138,10 @@ const Navbar = (props) => {
             */}
             
             <Button onClick={() => getNotes()}>Compose</Button>
-            <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes)}>Play</Button2>
+            <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes)}>
+              Play
+              
+            </Button2>
 
           </LinkWrapper>
         </Menu>
