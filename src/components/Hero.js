@@ -41,9 +41,7 @@ const Hero = (props) => {
         </div>
         </Holder2>
         </InnerWrapper>
-        <DemoVideo>
-
-        </DemoVideo>
+        
         
       </Wrapper>
     </Container>
