@@ -4,7 +4,7 @@ import image from "../assets/music14.png";
 import bg from "../assets/bg3.jpg";
 import HeroText from "./HeroText";
 import Tilt from "react-tilt";
-import Holder from "./Holder";
+import DemoVideo from "./DemoVideo";
 
 import tensorflow from "../assets/tensorflow.png";
 import react from "../assets/react.png";
@@ -41,6 +41,9 @@ const Hero = (props) => {
         </div>
         </Holder2>
         </InnerWrapper>
+        <DemoVideo>
+
+        </DemoVideo>
         
       </Wrapper>
     </Container>
@@ -70,7 +73,7 @@ const Holder2 = styled.div`
     vertical-align: middle;
     margin-left: 3rem;
     margin-right: 3rem;
-    
+    cursor: pointer;
   }
   
 `;
