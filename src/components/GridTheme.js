@@ -95,10 +95,10 @@ class GridTheme extends Component {
             '#c322a3',
             '#9eb5c2',
           ]}
-          title = "bach"
+          title = "movie"
           style = {{ width: '200px', height: '200px', transformStyle: 'preserve-3d', color: "#eb4034" }}
           layerStyle = {styleX}
-          onClick = {() => selected("bach")}
+          onClick = {() => selected("movie")}
         />
         <Cell
           layers={[
