@@ -13,8 +13,6 @@ from keras.layers import BatchNormalization as BatchNorm
 from keras.layers import Activation
 from datetime import datetime
 
-import boto3
-from botocore.client import Config
 
 
 

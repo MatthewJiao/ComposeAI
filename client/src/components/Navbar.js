@@ -82,7 +82,7 @@ const Navbar = (props) => {
     if (params.selectTheme == 'n/a') {
       alert('no theme selected')
     } else {
-    axios.get(`http://127.0.0.1:5000/predict/${params.selectTheme}`)
+    axios.get(`https://composeai.ue.r.appspot.com/predict/${params.selectTheme}`)
       .then(res => {
         const notes = res.data;
         handleNotes(notes)
