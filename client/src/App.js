@@ -5,6 +5,8 @@ import Theme from "./components/Theme"
 import Pitch from "./components/Pitch"
 import Duration from "./components/Duration"
 import Offset from "./components/Offset"
+import { names2 } from './components/names';
+
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -18,20 +20,29 @@ const App = () => {
   const [selectDuration, setSelectDuration] = useState([0,100]);
   const [selectOffset, setSelectOffset] = useState([0,100]);
   const [currentNotes, setCurrentNotes] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState();
   const [playList, setPlayList] = useState([]);
 
   const [playAble, setPlayAble] = useState(false);
 
-  const params = {playList, playAble, currentNotes, selectTheme, setSelectTheme, selectDuration, setSelectDuration, selectOffset, setSelectOffset}
+  const params = {setCurrentIndex, currentIndex, playList, playAble, currentNotes, selectTheme, setSelectTheme, selectDuration, setSelectDuration, selectOffset, setSelectOffset}
 
-
+  const adj = ["admiring","adoring","affectionate","agitated","amazing","angry","awesome","beautiful","blissful","bold","boring","brave","busy","charming","clever","cool","compassionate","competent","condescending","confident","cranky","crazy","dazzling","determined","distracted","dreamy","eager","ecstatic","elastic","elated","elegant","eloquent","epic","exciting","fervent","festive","flamboyant","focused","friendly","frosty","funny","gallant","gifted","goofy","gracious","great","happy","hardcore","heuristic","hopeful","hungry","infallible","inspiring","interesting","intelligent","jolly","jovial","keen","kind","laughing","loving","lucid","magical","mystifying","modest","musing","naughty","nervous","nice","nifty","nostalgic","objective","optimistic","peaceful","pedantic","pensive","practical","priceless","quirky","quizzical","recursing","relaxed","reverent","romantic","sad","serene","sharp","silly","sleepy","stoic","strange","stupefied","suspicious","sweet","tender","thirsty","trusting","unruffled","upbeat","vibrant","vigilant","vigorous","wizardly","wonderful","xenodochial","youthful","zealous","zen",]
+  const names3 = names2
   
   const handleNotes = (notes) => {
    // var newNotes = currentNotes.push(notes)
    // var newTitle = playList.push("new song")
     //console.log(newNotes)
+    const index = playList.length;
+    setCurrentIndex(index);
+
+    const random1 = Math.floor(Math.random() * adj.length);
+    const random2 = Math.floor(Math.random() * names3.length);
+    var newName = adj[random1].concat(" ");
+    var newName = newName.concat(names3[random2])
     setCurrentNotes([...currentNotes, notes])
-    setPlayList([...playList,"new son"])
+    setPlayList([...playList, newName])
 
     setPlayAble(true)
   }

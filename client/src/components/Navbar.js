@@ -142,7 +142,7 @@ const Navbar = (props) => {
             */}
             
             <Button onClick={() => getNotes()}>Compose</Button>
-            <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes[0])}>
+            <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes[params.currentIndex])}>
               Play
               
             </Button2>
