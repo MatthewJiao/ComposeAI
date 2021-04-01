@@ -91,6 +91,8 @@ const Navbar = (props) => {
       })
       .then(res => {
         console.log(params.currentNotes)
+        console.log(params.playList)
+
       })
       
       console.log("wummmorking");
@@ -144,7 +146,7 @@ const Navbar = (props) => {
               Play
               
             </Button2>
-            <PlayList/>
+            <PlayList params = {params}/>
 
           </LinkWrapper>
         </Menu>
