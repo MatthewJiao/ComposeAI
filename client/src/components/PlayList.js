@@ -18,10 +18,10 @@ const PlayList = (props) => {
     <InnerWrapper>
 
             
-          {params.playList.map(function(object) { // for each element in the Roles array, display it https://stackoverflow.com/questions/37997893/promise-error-objects-are-not-valid-as-a-react-child
+          {params.playList.map(function(object, index) { // for each element in the Roles array, display it https://stackoverflow.com/questions/37997893/promise-error-objects-are-not-valid-as-a-react-child
               return (
-                
-                <Button title="this is a button">
+
+                <Button index = {index} now = {params.currentIndex} title="" onClick = {() => props.params.setCurrentIndex(index)}>
                     {object}
                 </Button>
               );
@@ -36,10 +36,12 @@ const PlayList = (props) => {
 
 const Button = styled.button`
 
-background: #ffffff;
+background: ${({ index, now }) => (now == index ? "#000000" : "#ffffff")};
+
 border: solid;
 padding: 0.9rem 1.1rem;
 color: #347aeb;
+
 border-color: #347aeb;
 border-radius: 0.5rem;
 transition: all 0.3s ease-in-out;
@@ -53,6 +55,7 @@ cursor: pointer;
   border-color: #347aeb;
 }
 
+
 `;
 
 const InnerWrapper = styled.div`
@@ -60,8 +63,9 @@ overflow-y: scroll;
 position: absolute;
 right: 0;
 top: 90%;
-width: 10rem;
+width: 13rem;
 max-height: 30rem;
+
 
 `;
 

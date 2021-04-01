@@ -61,7 +61,7 @@ class GridTheme extends Component {
             };
           },
         }}
-        style={{ height: '700px', width: '700px', position: 'absolute', left: "22%", top: 0, border: "none", borderWidth: "0.2rem", borderColor: "#ffffff", padding: "0rem" }}
+        style={{ height: '700px', width: '700px', position: 'absolute', left: "15%", top: 0, border: "none", borderWidth: "0.2rem", borderColor: "#ffffff", padding: "0rem" }}
       >
           <Cell
           layers={[
