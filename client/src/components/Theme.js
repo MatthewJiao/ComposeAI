@@ -4,23 +4,49 @@ import image from "../assets/music14.png";
 import bg from "../assets/bg3.jpg";
 import HeroText from "./HeroText";
 import GridTheme from "./GridTheme";
+import PlayList from "./PlayList";
 
 import Tilt from "react-tilt";
 import RangeSlider from './durationSlider'
 
 const Theme = React.memo((props) => {
   const {handleChange, maintain, params} = props;
+  const Narray = ['hi', 'nope', 'later']
   handleChange(maintain);
   return (
     <Container bg={bg}>
       <Wrapper>
         <InnerWrapper>
           <GridTheme params = {params}/>
+
         </InnerWrapper>
       </Wrapper>
+
     </Container>
   );
 });
+
+
+const Button = styled.button`
+
+background: #ffffff;
+border: solid;
+padding: 0.9rem 1.1rem;
+color: #347aeb;
+border-color: #347aeb;
+border-radius: 0.5rem;
+transition: all 0.3s ease-in-out;
+margin: 0.5rem;
+font-size: 0.8rem;
+font-weight: 800;
+cursor: pointer;
+&:hover {
+  color: #ffffff;
+  background: #347aeb;
+  border-color: #347aeb;
+}
+
+`;
 
 const Left = styled.div`
   width: 50%;

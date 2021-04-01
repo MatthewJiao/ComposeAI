@@ -74,7 +74,7 @@ const HeroText = () => {
       <h1>Piano.</h1>
       <h1>Composition.</h1>
         <BtnContainer>
-        <Button>Dem Video</Button>
+        <Button>Demo Video</Button>
         <Button2 onClick={() => playMusic(demoNotes)}>
           <FontAwesomeIcon icon={faPlay} />
         </Button2>

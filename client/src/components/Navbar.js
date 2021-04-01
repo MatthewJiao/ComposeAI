@@ -10,6 +10,7 @@ import fs from 'fs'
 import * as Tone from 'tone'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import PlayList from "./PlayList";
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,12 +78,13 @@ const Navbar = (props) => {
     
   }
 
-
+  const localAPI = 'http://127.0.0.1:5000/'
+  const deployAPI = 'https://composeai.ue.r.appspot.com/predict/'
   const getNotes = () => {
     if (params.selectTheme == 'n/a') {
       alert('no theme selected')
     } else {
-    axios.get(`https://composeai.ue.r.appspot.com/predict/${params.selectTheme}`)
+    axios.get(`${localAPI}/predict/${params.selectTheme}`)
       .then(res => {
         const notes = res.data;
         handleNotes(notes)
@@ -138,10 +140,11 @@ const Navbar = (props) => {
             */}
             
             <Button onClick={() => getNotes()}>Compose</Button>
-            <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes)}>
+            <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes[0])}>
               Play
               
             </Button2>
+            <PlayList/>
 
           </LinkWrapper>
         </Menu>

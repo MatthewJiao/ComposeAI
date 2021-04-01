@@ -17,7 +17,7 @@ const App = () => {
   const [selectTheme, setSelectTheme] = useState('n/a');
   const [selectDuration, setSelectDuration] = useState([0,100]);
   const [selectOffset, setSelectOffset] = useState([0,100]);
-  const [currentNotes, setCurrentNotes] = useState('empty');
+  const [currentNotes, setCurrentNotes] = useState([]);
   const [playAble, setPlayAble] = useState(false);
 
   const params = {playAble, currentNotes, selectTheme, setSelectTheme, selectDuration, setSelectDuration, selectOffset, setSelectOffset}
@@ -25,7 +25,10 @@ const App = () => {
 
   
   const handleNotes = (notes) => {
-    setCurrentNotes(notes)
+    var newNotes = currentNotes.push(notes)
+
+    console.log(newNotes)
+   // setCurrentNotes([...currentNotes, notes])
     setPlayAble(true)
   }
 
