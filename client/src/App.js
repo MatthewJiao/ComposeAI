@@ -27,10 +27,12 @@ const App = () => {
 
   
   const handleNotes = (notes) => {
-    var newNotes = currentNotes.push(notes)
-    var newTitle = playList.push("new song")
-    console.log(newNotes)
-   // setCurrentNotes([...currentNotes, notes])
+   // var newNotes = currentNotes.push(notes)
+   // var newTitle = playList.push("new song")
+    //console.log(newNotes)
+    setCurrentNotes([...currentNotes, notes])
+    setPlayList([...playList,"new son"])
+
     setPlayAble(true)
   }
 

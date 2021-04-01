@@ -91,7 +91,7 @@ const Navbar = (props) => {
       })
       .then(res => {
         console.log(params.currentNotes)
-        console.log(params.playList)
+        console.log("play", params.playList)
 
       })
       
