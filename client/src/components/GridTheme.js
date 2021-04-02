@@ -5,14 +5,14 @@ import dynamics from 'dynamics.js';
 import bg from "../assets/bg3.jpg";
 import mozart from "../assets/mozart.png";
 import beethoven from "../assets/beethoven.jpg";
-import bach from "../assets/bach.png";
+import frozen from "../assets/frozen.jpg";
 import kpop from "../assets/kpop.jpg";
 import anime from "../assets/anime.jpg";
 import pop from "../assets/pop.jpg";
 
 import rock from "../assets/rock.jpg";
 import gaming from "../assets/gaming.jpg";
-import hiphop from "../assets/hiphop.jpg";
+import contemporary from "../assets/contemporary.jpg";
 import DurationSlider from './durationSlider'
 import OffsetSlider from './offsetSlider'
 
@@ -61,7 +61,7 @@ class GridTheme extends Component {
             };
           },
         }}
-        style={{ height: '700px', width: '700px', position: 'absolute', left: "15%", top: 0, border: "none", borderWidth: "0.2rem", borderColor: "#ffffff", padding: "0rem" }}
+        style={{ height: '700px', width: '700px', position: 'absolute', left: "18%", top: 0, border: "none", borderWidth: "0.2rem", borderColor: "#ffffff", padding: "0rem" }}
       >
           <Cell
           layers={[
@@ -90,7 +90,7 @@ class GridTheme extends Component {
     
         <Cell
           layers={[
-            `${bach}`,
+            `${frozen}`,
             '#9972fc',
             '#c322a3',
             '#9eb5c2',
@@ -115,7 +115,7 @@ class GridTheme extends Component {
         
         <Cell
           layers={[
-            `${hiphop}`,
+            `${contemporary}`,
             '#9972fc',
             '#c322a3',
             '#9eb5c2',

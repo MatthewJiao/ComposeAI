@@ -5,14 +5,15 @@ import bg from "../assets/bg3.jpg";
 import HeroText from "./HeroText";
 import GridTheme from "./GridTheme";
 
+
 import Tilt from "react-tilt";
 import RangeSlider from './durationSlider'
 
 const PlayList = (props) => {
   const Narray = ['hi', 'nope', 'later']
   const {params} = props;
-  console.log(params.playList.length)
-  if (params.playList.length != 0) {
+  console.log('umm', params.theme1)
+  if (params.playList.length != 0 && props.params.theme1) {
   return (
     
     <InnerWrapper>
@@ -39,11 +40,12 @@ const Button = styled.button`
 background: ${({ index, now }) => (now == index ? "#000000" : "#ffffff")};
 
 border: solid;
-padding: 0.9rem 1.1rem;
+padding: 0.5rem;
 color: #347aeb;
-
+border-width: 0rem;
 border-color: #347aeb;
-border-radius: 0.5rem;
+outline: none;
+border-radius: 0.3rem;
 transition: all 0.3s ease-in-out;
 margin: 0.5rem;
 font-size: 0.8rem;
@@ -59,11 +61,12 @@ cursor: pointer;
 `;
 
 const InnerWrapper = styled.div`
+margin-top: 1rem;
 overflow-y: scroll;
 position: absolute;
-right: 0;
+right: 10%;
 top: 90%;
-width: 13rem;
+width: 11rem;
 max-height: 30rem;
 
 

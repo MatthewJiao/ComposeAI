@@ -22,10 +22,12 @@ const App = () => {
   const [currentNotes, setCurrentNotes] = useState([]);
   const [currentIndex, setCurrentIndex] = useState();
   const [playList, setPlayList] = useState([]);
+  const [timer, setTimer] = useState(false);
+
 
   const [playAble, setPlayAble] = useState(false);
 
-  const params = {setCurrentIndex, currentIndex, playList, playAble, currentNotes, selectTheme, setSelectTheme, selectDuration, setSelectDuration, selectOffset, setSelectOffset}
+  const params = {theme1, timer, setTimer, setCurrentIndex, currentIndex, playList, playAble, currentNotes, selectTheme, setSelectTheme, selectDuration, setSelectDuration, selectOffset, setSelectOffset}
 
   const adj = ["admiring","adoring","affectionate","agitated","amazing","angry","awesome","beautiful","blissful","bold","boring","brave","busy","charming","clever","cool","compassionate","competent","condescending","confident","cranky","crazy","dazzling","determined","distracted","dreamy","eager","ecstatic","elastic","elated","elegant","eloquent","epic","exciting","fervent","festive","flamboyant","focused","friendly","frosty","funny","gallant","gifted","goofy","gracious","great","happy","hardcore","heuristic","hopeful","hungry","infallible","inspiring","interesting","intelligent","jolly","jovial","keen","kind","laughing","loving","lucid","magical","mystifying","modest","musing","naughty","nervous","nice","nifty","nostalgic","objective","optimistic","peaceful","pedantic","pensive","practical","priceless","quirky","quizzical","recursing","relaxed","reverent","romantic","sad","serene","sharp","silly","sleepy","stoic","strange","stupefied","suspicious","sweet","tender","thirsty","trusting","unruffled","upbeat","vibrant","vigilant","vigorous","wizardly","wonderful","xenodochial","youthful","zealous","zen",]
   const names3 = names2
@@ -34,6 +36,8 @@ const App = () => {
    // var newNotes = currentNotes.push(notes)
    // var newTitle = playList.push("new song")
     //console.log(newNotes)
+    setTimer(false)
+    console.log('kk', theme1)
     const index = playList.length;
     setCurrentIndex(index);
 

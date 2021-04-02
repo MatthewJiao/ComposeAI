@@ -11,6 +11,8 @@ import * as Tone from 'tone'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import PlayList from "./PlayList";
+import Countdown from 'react-countdown';
+
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,12 +81,12 @@ const Navbar = (props) => {
   }
 
   const localAPI = 'http://127.0.0.1:5000/'
-  const deployAPI = 'https://composeai.ue.r.appspot.com/predict/'
+  const deployAPI = 'https://composeai.ue.r.appspot.com'
   const getNotes = () => {
     if (params.selectTheme == 'n/a') {
       alert('no theme selected')
     } else {
-    axios.get(`${localAPI}/predict/${params.selectTheme}`)
+    axios.get(`${deployAPI}/predict/${params.selectTheme}`)
       .then(res => {
         const notes = res.data;
         handleNotes(notes)
@@ -141,7 +143,22 @@ const Navbar = (props) => {
             </Link>
             */}
             
-            <Button onClick={() => getNotes()}>Compose</Button>
+            <Button disabled = {params.timer} onClick={() => {
+              if (params.selectTheme != "n/a") {
+                getNotes()
+                params.setTimer(true)
+              } else {
+                alert('select a theme')
+              }
+            }}>    
+
+            {params.timer ? (
+            <Countdown date={Date.now() + 300000} onComplete = {() => params.setTimer(false)}/>
+            ) : (
+              "Compose")}
+
+            </Button>
+
             <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes[params.currentIndex])}>
               Play
               
@@ -194,6 +211,7 @@ color: #9f5ec4;
 border-color: #9f5ec4;
 border-radius: 0.5rem;
 font-weight: 800;
+outline: none;
 
 transition: all 0.3s ease-in-out;
 margin: 0.5rem;
@@ -215,6 +233,7 @@ border-color: #ed61ac;
 border-radius: 0.5rem;
 transition: all 0.3s ease-in-out;
 font-weight: 800;
+outline: none;
 
 font-size: 0.8rem;
 cursor: pointer;
