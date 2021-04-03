@@ -35,7 +35,7 @@ const playMusic = (prediction_output) => {
         processed_output.push(prediction_output[i].replace('-','b4'))
       }
     } else if (isNumeric(prediction_output[i])) {
-      processed_output.push(freq(parseInt(prediction_output[i])))
+        processed_output.push(freq(parseInt(prediction_output[i]) + octaveAdj))
     } else {
       processed_output.push(prediction_output[i])
     }
