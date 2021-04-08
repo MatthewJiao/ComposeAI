@@ -73,10 +73,11 @@ const InnerWrapper = styled.div`
   max-width: 1000px;
   height: 100%;
   margin: auto;
-  display: flex;
+  display: flex-box;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
 `;
 const Wrapper = styled.div`
   height: 100vh;
@@ -89,6 +90,7 @@ const Wrapper = styled.div`
     background-color: rgba(255, 255, 255, 0.3);
   }
   */
+  
 `;
 
 const Container = styled.div`
