@@ -86,7 +86,7 @@ const Navbar = (props) => {
     if (params.selectTheme == 'n/a') {
       alert('no theme selected')
     } else {
-    axios.get(`${deployAPI}/predict/${params.selectTheme}`)
+    axios.get(`${localAPI}/predict/${params.selectTheme}`)
       .then(res => {
         const notes = res.data;
         handleNotes(notes)
@@ -124,10 +124,15 @@ const Navbar = (props) => {
           offset = {offset} 
           >
 
-
+            {
+              params.timer ?
+              <Link className="noClick" to="/" onClick={ (event) => event.preventDefault() }>
+              <h3>Home</h3>            
+            </Link> : 
             <Link className="home" to="/">
               <h3>Home</h3>            
             </Link>
+            }
             <Link className="theme" to="/theme">
                 <h3>Theme</h3> 
             </Link>
@@ -153,7 +158,7 @@ const Navbar = (props) => {
             }}>    
 
             {params.timer ? (
-            <Countdown date={Date.now() + 300000} onComplete = {() => params.setTimer(false)}/>
+            <Countdown date={Date.now() + 30000} onComplete = {() => params.setTimer(false)}/>
             ) : (
               "Compose")}
 
@@ -376,6 +381,12 @@ const LinkWrapper = styled.div`
     color: ${({ home }) => (home ? "#000000" : "#ffffff")};
     background: ${({ home }) => (home ? "#ffffff" : "ffffff")};
 
+  }
+
+  .noClick {
+    h3 {
+      font-weight: 600;
+      }
   }
   .theme {
     margin-left: 0.5rem;
