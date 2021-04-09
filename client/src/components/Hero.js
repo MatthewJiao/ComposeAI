@@ -15,14 +15,14 @@ import gcloud from "../assets/gcloud.png";
 
 
 const Hero = (props) => {
-  const {handleChange, maintain} = props;
+  const {handleChange, maintain, params} = props;
   handleChange(maintain);
   return (
     <Container bg={bg}>
       <Wrapper>
         <InnerWrapper>
           <Left>
-            <HeroText />
+            <HeroText params = {params}/>
           </Left>
           <TiltWrapper options={{ max: 25 }}>
             <Img src={image} alt="" />

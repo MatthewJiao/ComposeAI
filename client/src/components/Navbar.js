@@ -13,6 +13,9 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import PlayList from "./PlayList";
 import Countdown from 'react-countdown';
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -148,7 +151,7 @@ const Navbar = (props) => {
             </Link>
             */}
             
-            <Button disabled = {params.timer} onClick={() => {
+            <Button timer = {params.timer} disabled = {params.timer} onClick={() => {
               if (params.selectTheme != "n/a") {
                 getNotes()
                 params.setTimer(true)
@@ -158,13 +161,27 @@ const Navbar = (props) => {
             }}>    
 
             {params.timer ? (
-            <Countdown date={Date.now() + 30000} onComplete = {() => params.setTimer(false)}/>
+            <Countdown date={Date.now() + 500000 + getRandomInt(200000)} onComplete = {() => params.setTimer(false)}/>
             ) : (
               "Compose")}
 
             </Button>
 
-            <Button2 playAble ={params.playAble} onClick={() => playMusic(params.currentNotes[params.currentIndex])}>
+
+            <Button2 playAble ={params.playAble} onClick={() => 
+            {
+              if (params.playOn) {
+
+              } else {  
+                params.setPlayOn(true)
+                playMusic(params.currentNotes[params.currentIndex])
+                setTimeout(function(){ 
+                    params.setPlayOn(false)
+                }, 125000);
+    
+              }
+            }
+            }>
               Play
               
             </Button2>
@@ -208,6 +225,7 @@ const Logo = styled.div`
 `;
 
 
+
 const Button = styled.button`
 background: #ffffff;
 border: solid;
@@ -227,6 +245,22 @@ cursor: pointer;
   background: #9f5ec4;
   border-color: #9f5ec4;
 }
+
+animation: ${({ timer }) => (timer ? "pulse 1s infinite" : "none")};
+
+
+@keyframes pulse {
+  0% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #c9c8f7;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+
 `;
 
 const Button2 = styled.button`

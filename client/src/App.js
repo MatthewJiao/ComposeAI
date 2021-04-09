@@ -23,11 +23,13 @@ const App = () => {
   const [currentIndex, setCurrentIndex] = useState();
   const [playList, setPlayList] = useState([]);
   const [timer, setTimer] = useState(false);
+  const [demoOn, setDemoOn] = useState(false);
+  const [playOn, setPlayOn] = useState(false);
 
 
   const [playAble, setPlayAble] = useState(false);
 
-  const params = {theme1, timer, setTimer, setCurrentIndex, currentIndex, playList, playAble, currentNotes, selectTheme, setSelectTheme, selectDuration, setSelectDuration, selectOffset, setSelectOffset}
+  const params = {playOn, setPlayOn, setDemoOn, demoOn, theme1, timer, setTimer, setCurrentIndex, currentIndex, playList, playAble, currentNotes, selectTheme, setSelectTheme, selectDuration, setSelectDuration, selectOffset, setSelectOffset}
 
   const adj = ["admiring","adoring","affectionate","agitated","amazing","angry","awesome","beautiful","blissful","bold","boring","brave","busy","charming","clever","cool","compassionate","competent","condescending","confident","cranky","crazy","dazzling","determined","distracted","dreamy","eager","ecstatic","elastic","elated","elegant","eloquent","epic","exciting","fervent","festive","flamboyant","focused","friendly","frosty","funny","gallant","gifted","goofy","gracious","great","happy","hardcore","heuristic","hopeful","hungry","infallible","inspiring","interesting","intelligent","jolly","jovial","keen","kind","laughing","loving","lucid","magical","mystifying","modest","musing","naughty","nervous","nice","nifty","nostalgic","objective","optimistic","peaceful","pedantic","pensive","practical","priceless","quirky","quizzical","recursing","relaxed","reverent","romantic","sad","serene","sharp","silly","sleepy","stoic","strange","stupefied","suspicious","sweet","tender","thirsty","trusting","unruffled","upbeat","vibrant","vigilant","vigorous","wizardly","wonderful","xenodochial","youthful","zealous","zen",]
   const names3 = names2
@@ -86,7 +88,7 @@ const App = () => {
         />
         <Switch>
           <Route path="/" exact 
-            component={() => <Hero handleChange={handleChange} maintain={1} />}
+            component={() => <Hero handleChange={handleChange} maintain={1} params = {params} />}
           />
           <Route path="/theme" 
             component={() => <Theme handleChange={handleChange} maintain={2} params = {params}/>}  

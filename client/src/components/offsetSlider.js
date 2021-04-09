@@ -26,7 +26,7 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        Note Offset (seconds)
+        Note Offset
       </Typography>
       <Slider
         value={value}
