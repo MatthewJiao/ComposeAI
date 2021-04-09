@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import PlayList from "./PlayList";
 import Countdown from 'react-countdown';
+import swal from 'sweetalert';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -87,7 +88,8 @@ const Navbar = (props) => {
   const deployAPI = 'https://composeai.ue.r.appspot.com'
   const getNotes = () => {
     if (params.selectTheme == 'n/a') {
-      alert('no theme selected')
+      swal("No Theme Selected!");
+
     } else {
     axios.get(`${deployAPI}/predict/${params.selectTheme}`)
       .then(res => {
@@ -156,7 +158,7 @@ const Navbar = (props) => {
                 getNotes()
                 params.setTimer(true)
               } else {
-                alert('select a theme')
+                swal("No Theme Selected!");
               }
             }}>    
 
