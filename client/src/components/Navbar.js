@@ -89,7 +89,7 @@ const Navbar = (props) => {
     if (params.selectTheme == 'n/a') {
       alert('no theme selected')
     } else {
-    axios.get(`${localAPI}/predict/${params.selectTheme}`)
+    axios.get(`${deployAPI}/predict/${params.selectTheme}`)
       .then(res => {
         const notes = res.data;
         handleNotes(notes)
