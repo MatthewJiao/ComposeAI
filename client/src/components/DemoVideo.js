@@ -4,10 +4,20 @@ import styled from "styled-components";
 
 
 const DemoVideo = () => {
-
+  const embedId = 'U7gZxsSiCzs'
   return (
     <Container>
-      DemoVideo
+      <div className="video-responsive">
+    <iframe
+      width="853"
+      height="480"
+      src={`https://www.youtube.com/embed/${embedId}`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Embedded youtube"
+    />
+  </div>
     </Container>
   );
 };
@@ -20,6 +30,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background: #1e2033;
+  
+
   
 
 `;
