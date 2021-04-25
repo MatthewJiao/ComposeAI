@@ -2,6 +2,6 @@
 
 ![Screenshot](Demo.JPG)
 
-http://compose-ai.ml
+## http://compose-ai.ml
 
-https://www.youtube.com/watch?v=U7gZxsSiCzs
+## https://www.youtube.com/watch?v=U7gZxsSiCzs
